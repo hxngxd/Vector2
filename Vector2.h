@@ -49,9 +49,7 @@ public:
         return Vector2(-INFINITY, -INFINITY);
     }
 
-    /*
-     * Swaps the x and y values of the vector
-     */
+    // Swaps the x and y values of the vector
     void swapAxis()
     {
         float temp = x;
@@ -164,25 +162,19 @@ public:
         return x * other.x + y * other.y;
     }
 
-    /*
-     * Returns the angle in radians between this vector and the other vector
-     */
+    // Returns the angle in radians between this vector and the other vector
     float signedAngle(const Vector2 &other) const
     {
         return atan2(x * other.y - y * other.x, x * other.x + y * other.y);
     }
 
-    /*
-     * Returns the angle in degrees between this vector and the other vector
-     */
+    // Returns the angle in degrees between this vector and the other vector
     float signedAngleDeg(const Vector2 &other) const
     {
         return signedAngle(other) * 180 / M_PI;
     }
 
-    /*
-     * Rotate the vector by the given angle in radians
-     */
+    // Rotate the vector by the given angle in radians
     Vector2 rotate(float angle) const
     {
         Vector2 rotatedVector;
@@ -200,17 +192,13 @@ public:
         return rotatedVector;
     }
 
-    /*
-     * Rotate the vector by the given angle in degrees
-     */
+    // Rotate the vector by the given angle in degrees
     Vector2 rotateDeg(float angle) const
     {
         return rotate(angle * M_PI / 180);
     }
 
-    /*
-     * Rotate around pivot by the given angle in radians
-     */
+    // Rotate around pivot by the given angle in radians
     Vector2 rotateAround(const Vector2 &pivot, float angle) const
     {
         Vector2 rotatedVector = *this - pivot;
@@ -219,17 +207,13 @@ public:
         return rotatedVector;
     }
 
-    /*
-     * Rotate around pivot by the given angle in degrees
-     */
+    // Rotate around pivot by the given angle in degrees
     Vector2 rotateAroundDeg(const Vector2 &pivot, float angle) const
     {
         return rotateAround(pivot, angle * M_PI / 180);
     }
 
-    /*
-     * Linearly interpolates between this vector and the other vector by t
-     */
+    // Linearly interpolates between this vector and the other vector by t
     void Lerp(const Vector2 &to, float t)
     {
         if (distance(to) < 0.0001)
